@@ -18,7 +18,6 @@ const rows = [
   `GitHub: ${chalk.grey('https://github.com/stepankuzmin')}`,
   `npm: ${chalk.grey('https://www.npmjs.com/~stepankuzmin')}`,
   `web: ${chalk.grey('https://stepankuzmin.com')}`,
-  newLine,
   newLine
 ];
 
@@ -33,4 +32,4 @@ const wrap = (row = '') => wordWrap(row, wrapOptions);
 const output = rows.map(wrap).join(newLine);
 
 fs.writeFileSync(path.join(__dirname, 'bin/output'), output);
-process.stdout.write(output);
+console.log(output);
