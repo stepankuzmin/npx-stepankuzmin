@@ -11,21 +11,21 @@ const rows = [
   newLine,
   chalk.grey(title),
   newLine,
-  `Work: ${chalk.grey('CTO at Urbica')}`,
+  `Work: ${chalk.grey('Team leader at Yandex Taxi, ex-CTO at Urbica')}`,
   `Twitter: ${chalk.grey('https://twitter.com/stepankuzmin')}`,
   `LinkedIn: ${chalk.grey('https://linkedin.com/in/stepan-kuzmin')}`,
   newLine,
   `GitHub: ${chalk.grey('https://github.com/stepankuzmin')}`,
   `npm: ${chalk.grey('https://www.npmjs.com/~stepankuzmin')}`,
   `web: ${chalk.grey('https://stepankuzmin.com')}`,
-  newLine
+  newLine,
 ];
 
 const indent = '   ';
 const wrapOptions = {
   indent,
   trim: false,
-  width: process.stdout.columns - indent.length
+  width: process.stdout.columns - indent.length,
 };
 
 const wrap = (row = '') => wordWrap(row, wrapOptions);
