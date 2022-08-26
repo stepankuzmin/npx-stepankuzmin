@@ -1,18 +1,19 @@
 {
   "name": "stepankuzmin",
-  "version": "2.0.0",
+  "version": "3.0.0",
   "author": "Stepan Kuzmin <to.stepan.kuzmin@gmail.com> (https://stepankuzmin.com)",
   "license": "MIT",
   "repository": {
     "type": "git",
     "url": "https://github.com/stepankuzmin/npx-stepankuzmin.git"
   },
-  "main": "/bin/card.js",
+  "type": "module",
+  "main": "/bin/card.cjs",
   "bin": {
-    "stepankuzmin": "./bin/card.js"
+    "stepankuzmin": "./bin/card.cjs"
   },
   "files": [
-    "bin/card.js",
+    "bin/card.cjs",
     "bin/output"
   ],
   "scripts": {
@@ -23,19 +24,26 @@
     "release": "release-it"
   },
   "devDependencies": {
-    "chalk": "^4.1.0",
-    "eslint": "^7.16.0",
-    "eslint-config-airbnb-base": "^14.2.1",
-    "eslint-plugin-import": "^2.22.1",
-    "release-it": "^14.2.2",
+    "chalk": "^5.0.1",
+    "eslint": "^8.22.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.26.0",
+    "release-it": "^15.4.0",
     "word-wrap": "^1.2.3"
   },
   "eslintConfig": {
     "extends": "airbnb-base",
+    "env": {
+      "es2022": true
+    },
     "rules": {
       "no-console": 0,
       "comma-dangle": 0,
       "import/no-extraneous-dependencies": 0
+    },
+    "parserOptions": {
+      "sourceType": "module",
+      "ecmaVersion": "latest"
     }
   },
   "keywords": [
