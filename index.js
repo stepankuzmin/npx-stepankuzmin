@@ -1,7 +1,8 @@
-const fs = require('fs');
-const path = require('path');
-const chalk = require('chalk');
-const wordWrap = require('word-wrap');
+import fs from 'fs';
+import path from 'path';
+import chalk from 'chalk';
+import wordWrap from 'word-wrap';
+import { fileURLToPath } from 'url';
 
 const title = `Stepan Kuzmin is a software engineer and GIS specialist
 with 10 years of experience in solving problems with technologies`;
@@ -11,13 +12,13 @@ const rows = [
   newLine,
   chalk.grey(title),
   newLine,
-  `Work: ${chalk.grey('Team leader at Yandex Taxi, ex-CTO at Urbica')}`,
-  `Twitter: ${chalk.grey('https://twitter.com/stepankuzmin')}`,
-  `LinkedIn: ${chalk.grey('https://linkedin.com/in/stepan-kuzmin')}`,
+  `${chalk.grey('Work')}: Software Engineer at Mapbox`,
+  `${chalk.grey('Twitter')}: https://twitter.com/stepankuzmin`,
+  `${chalk.grey('LinkedIn')}: https://linkedin.com/in/stepan-kuzmin`,
   newLine,
-  `GitHub: ${chalk.grey('https://github.com/stepankuzmin')}`,
-  `npm: ${chalk.grey('https://www.npmjs.com/~stepankuzmin')}`,
-  `web: ${chalk.grey('https://stepankuzmin.com')}`,
+  `${chalk.grey('GitHub')}: https://github.com/stepankuzmin`,
+  `${chalk.grey('npm')}: https://www.npmjs.com/~stepankuzmin`,
+  `${chalk.grey('web')}: https://stepankuzmin.com`,
   newLine,
 ];
 
@@ -31,5 +32,6 @@ const wrapOptions = {
 const wrap = (row = '') => wordWrap(row, wrapOptions);
 const output = rows.map(wrap).join(newLine);
 
-fs.writeFileSync(path.join(__dirname, 'bin/output'), output);
+const dirname = path.dirname(fileURLToPath(import.meta.url));
+fs.writeFileSync(path.join(dirname, 'bin/output'), output);
 console.log(output);
